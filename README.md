@@ -15,7 +15,6 @@ L'application repose sur des modèles d’apprentissage automatique et propose u
 Offrir une plateforme pédagogique pour démontrer l’application de l’intelligence artificielle dans la santé, en prédiction automatique à partir de données cliniques et d’images médicales.
 
 
-
 ## ⚙️ Fonctionnalités
 
 - Interface web développée avec Flask
@@ -29,7 +28,6 @@ Offrir une plateforme pédagogique pour démontrer l’application de l’intell
 > ⚠️ Ce projet est uniquement à but **éducatif** et **non médical**. Aucune décision réelle de santé ne doit être prise à partir de ses résultats.
 
 
-
 ## 🧰 Technologies utilisées
 
 - **Python**
@@ -39,7 +37,7 @@ Offrir une plateforme pédagogique pour démontrer l’application de l’intell
 - **OpenCV**, **PIL**
 - **HTML/CSS**
 
----
+
 ## 👤 Réalisé par
 - Rania BENTABE : rania.bentabe@etud.u-picardie.fr
 - DUT IDSD, Semestre 4 – Ecole Supérieur de Technologie

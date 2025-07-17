@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Login Form</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="static/css/fontawesome.css">
+<link rel="stylesheet" href="static/css/templatemo-scholar.css">
+<link rel="stylesheet" href="static/css/owl.css">
+<link rel="stylesheet" href="static/css/animate.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+<style>
+.container {
+    margin-top: 100px;
+    background-color: rgba(52, 48, 60, 0.15);
+    border: 1px solid rgba(118, 108, 174, 0.05); /* Largeur de la bordure minimisée (118, 108, 174, 0.05) */
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body> 
+<div class="container text-center">
+    <h2>User Login</h2>
+    <form action="{{ url_for('login') }}" method="post">
+        {% if message %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endif %}
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" value="">
+        </div>    
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="bottom">Dont't have an account?  <a class="bottom" href="{{url_for('signup')}}"> Register here</a></p>
+    </form>
+</div>
+
+
+<script src="static/jquery/jquery.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/isotope.min.js"></script>
+<script src="static/js/owl-carousel.js"></script>
+<script src="static/js/counter.js"></script>
+<script src="static/js/custom.js"></script>
+</body>
+</html>

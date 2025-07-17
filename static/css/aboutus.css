@@ -1,0 +1,44 @@
+
+body {
+ padding-top: 3.5rem;
+}
+
+.navbar-brand {
+ font-size: 20px;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.jumbotron {
+ background-color: #f8f9fa;
+}
+
+.container {
+ margin-top: 30px;
+}
+
+.btn btn-primary btn-lg {
+ background-color: #6c757d;
+ border-color: #6c757d;
+}
+
+.btn btn-primary btn-lg:hover {
+ background-color: #5a6268;
+ border-color: #545b62;
+}
+
+.btn-secondary {
+ background-color: #6c757d;
+ border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+ background-color: #5a6268;
+ border-color: #545b62;
+}
+
+footer {
+ background-color: #343a40;
+ color: #ffffff;
+ padding: 20px 0;
+ text-align: center;
+}

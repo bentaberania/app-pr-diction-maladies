@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Heart_prediction.css') }}">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            background-image: url("../static/images/banner-bg.jpg");
+            /* Réglez la taille de l'image et son comportement de répétition ou de positionnement selon vos besoins */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Disease Prediction</h1>
+    <form action="/Heart_prediction" method="post">
+        <label for="Age">Age:</label><br>
+        <input type="text" id="Age" name="Age" required><br>
+        <label for="Sex">Sex:</label><br>
+        <input type="text" id="Sex" name="Sex" required><br>
+        <label for="ChestPainTypes">Chest Pain Types:</label><br>
+        <input type="text" id="ChestPainTypes" name="Chest Pain types" required><br>
+        <label for="RestingBloodPressure">Resting Blood Pressure:</label><br>
+        <input type="text" id="RestingBloodPressure" name="Resting Blood Pressure" required><br>
+        <label for="SerumCholestoral">Serum Cholestoral in mg/dl:</label><br>
+        <input type="text" id="SerumCholestoral" name="Serum Cholestoral in mg/dl" required><br>
+        <label for="FastingBloodSugar">Fasting Blood Sugar > 120 mg/dl:</label><br>
+        <input type="text" id="FastingBloodSugar" name="Fasting Blood Sugar > 120 mg/dl" required><br>
+        <label for="RestingElectrocardiographicResults">Resting Electrocardiographic Results:</label><br>
+        <input type="text" id="RestingElectrocardiographicResults" name="Resting Electrocardiographic results" required><br>
+        <label for="MaximumHeartRate">Maximum Heart Rate achieved:</label><br>
+        <input type="text" id="MaximumHeartRate" name="Maximum Heart Rate achieved" required><br>
+        <label for="ExerciseInducedAngina">Exercise Induced Angina:</label><br>
+        <input type="text" id="ExerciseInducedAngina" name="Exercise Induced Angina" required><br>
+        <label for="STDepressionInducedByExercise">ST depression induced by exercise:</label><br>
+        <input type="text" id="STDepressionInducedByExercise" name="ST depression induced by exercise" required><br>
+        <label for="SlopePeakExerciseSTSegment">Slope of the peak exercise ST segment:</label><br>
+        <input type="text" id="SlopePeakExerciseSTSegment" name="Slope of the peak exercise ST segment" required><br>
+        <label for="MajorVesselsColoredByFlourosopy">Major vessels colored by flourosopy:</label><br>
+        <input type="text" id="MajorVesselsColoredByFlourosopy" name="Major vessels colored by flourosopy" required><br>
+        <label for="Thal">Thal:</label><br>
+        <input type="text" id="Thal" name="thal" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>

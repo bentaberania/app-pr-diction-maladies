@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>User Sign-Up Form</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+<link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="static/css/fontawesome.css">
+<link rel="stylesheet" href="static/css/templatemo-scholar.css">
+<link rel="stylesheet" href="static/css/owl.css">
+<link rel="stylesheet" href="static/css/animate.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+<style>
+.container {
+    margin-top: 100px;
+    background-color: rgba(52, 48, 60, 0.15);
+    border: 1px solid rgba(118, 108, 174, 0.05); 
+    padding: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h2>User Registration</h2>
+        <form action="{{ url_for('signup') }}" method="post">
+            {% if message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>    
+            <button type="submit" class="btn btn-primary">Signup</button>
+            <p class="bottom">Already have an account? <a class="bottom" href="{{url_for('login')}}">Login here</a></p>
+        </form>
+    </div>        
+           
+
+<script src="static/jquery/jquery.min.js"></script>
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/isotope.min.js"></script>
+<script src="static/js/owl-carousel.js"></script>
+<script src="static/js/counter.js"></script>
+<script src="static/js/custom.js"></script>
+</body>
+</html>

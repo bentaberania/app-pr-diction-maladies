@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url("../static/images/banner-bg.jpg");
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-container {
+            text-align: center;
+        }
+        .button {
+            background-color: #9783ac;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .button:hover {
+            background-color: #7e5ba2;
+        }
+        /* Nouveau style ajouté pour centrer les éléments */
+        .result-item {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #download {
+         background-color: #9783ac;
+         color: white;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+         cursor: pointer;
+     }
+     #download:hover {
+         background-color: #7e5ba2;
+     }
+    </style>
+</head>
+<body>
+    <h1>Image Classification</h1>
+    <h3>Take file:</h3>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" class="button">
+        <button type="submit" class="button">Predict</button>
+    </form>
+    {% if prediction_result %}
+    <div class="result-container">
+        <h2>Classification Result:</h2>
+        <div class="result-item">
+            <p>The predicted class is: {{ prediction_result }}</p>
+        </div>
+        <!-- Ajoutez un bouton pour télécharger le résultat au format PDF -->
+        <button id="download">Download PDF</button>
+    </div>
+    {% endif %}
+    
+    <script type="text/javascript">
+        document.getElementById("download").addEventListener("click", () => {
+            const resultDiv = document.querySelector(".result-container");
+            const opt = {
+                margin: 1,
+                filename: 'Classification_Result.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(resultDiv).set(opt).save();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* Style du formulaire */
+
+
+form {
+ width: 500px; /* Largeur du formulaire */
+ margin: auto; /* Centre le formulaire horizontalement */
+ padding: 20px;
+ border: 1px solid #E0D6EB;
+ border-radius: 5px;
+ background-color: #E0D6EB;
+}
+
+/* Style des champs de saisie et des étiquettes */
+form input[type="text"],
+form input[type="submit"] {
+ width: 100%;
+ padding: 10px;
+ margin-bottom: 10px;
+ box-sizing: border-box; /* Pour inclure le padding et le bord dans la largeur */
+}
+
+/* Style du bouton de soumission */
+form input[type="submit"] {
+ background-color: #9783ac;
+ color: white;
+ border: none;
+ cursor: pointer;
+}
+
+/* Changement de couleur du bouton lorsqu'il est survolé */
+form input[type="submit"]:hover {
+ background-color: #7e5ba2;
+}
+
+h1 {
+ text-align: center;
+}

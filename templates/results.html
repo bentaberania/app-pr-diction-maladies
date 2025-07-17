@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            background-image: url("../static/images/banner-bg.jpg");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-container {
+            text-align: center;
+        }
+        #download {
+            background-color: #9783ac;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #download:hover {
+            background-color: #7e5ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Prediction Results</h1>
+        <p>Probability of being healthy: {{ '%.3f'|format(prob_healthy) }}</p>
+        <p>Probability of having a heart disease: {{ '%.3f'|format(prob_disease) }}</p>
+        <p>{{ prediction }}</p>
+        
+        <!-- Ajoutez un bouton pour télécharger le résultat au format PDF -->
+        <button id="download">Download PDF</button>
+    </div>
+
+    <script type="text/javascript" language="JavaScript">
+        window.onload = function () {
+            document.getElementById("download").addEventListener("click", () => {
+                const resultDiv = this.document.querySelector(".result-container");
+                const opt = {
+                    margin: 1,
+                    filename: 'Heart_Assessment.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().from(resultDiv).set(opt).save();
+            });
+        }
+    </script>
+</body>
+</html>
